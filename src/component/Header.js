@@ -82,7 +82,6 @@ export default function Header({ $target, initialState }) {
           const [, , postId] = pathname.split("/");
           const editedJson = stringifyBody(edited);
           parseRes(edited);
-          console.log(edited);
 
           await request(`/documents/${postId}`, {
             method: "PUT",
