@@ -70,7 +70,10 @@ export default function Header({ $target, initialState }) {
 
     new Editor({
       $target: postEditPage,
-      initialState: this.state,
+      initialState:
+        $target.getAttribute("id") == "sideMenu"
+          ? { ...this.state, target: "notion title" }
+          : this.state,
       onEditing: async (edited) => {
         // 연속 입력 시에는 이벤트 억제
         if (timer !== null) clearTimeout(timer);
@@ -79,6 +82,7 @@ export default function Header({ $target, initialState }) {
           const [, , postId] = pathname.split("/");
           const editedJson = stringifyBody(edited);
           parseRes(edited);
+          console.log(edited);
 
           await request(`/documents/${postId}`, {
             method: "PUT",
@@ -92,9 +96,15 @@ export default function Header({ $target, initialState }) {
             $header.querySelector(".headerTitle").innerHTML = edited.title;
           }
 
-          document.querySelector(
-            "#sideListBox .listTitle.nowOpened .openListButton"
-          ).innerHTML = edited.title;
+          if (edited.target == "notion title") {
+            document.querySelector(
+              "#sideMenu .headerBox .headerTitle"
+            ).innerHTML = edited.title;
+          } else {
+            document.querySelector(
+              "#sideListBox .listTitle.nowOpened .openListButton"
+            ).innerHTML = edited.title;
+          }
 
           toast("Saved");
         }, 2000);
