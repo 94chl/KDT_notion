@@ -30,7 +30,6 @@ export default function Header({ $target, initialState }) {
 
   this.render = async () => {
     if (this.state.id == "initialPage") {
-      document.querySelector("#container .headerBox").remove();
       return;
     }
     // Root Document의 0번 인덱스를 Header로 지정
