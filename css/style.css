@@ -269,8 +269,12 @@ body {
 
 #container .headerBox .headerTitle {
   cursor: pointer;
-  width:75%;
-  margin: auto;
+  width:fit-content;
+  min-width: 180px;
+  max-width: 720px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-left: 1em;
   font-size: 2em;
   padding: 0.25em;
   border-bottom: 3px double #000;
