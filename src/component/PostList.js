@@ -99,7 +99,7 @@ export default function PostList({
       push(`/documents/new`, "new", undefined, id);
     } else if ($btn.className === "removePostButton") {
       const { pathname } = window.location;
-      const [, , postId] = pathname.split("/");
+      const [, , , postId] = pathname.split("/");
 
       onRemove({
         removeItSelf: id === postId,
