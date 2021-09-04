@@ -16,6 +16,8 @@ export default function PostsPage({ $target, mainPageId }) {
       });
 
       removeChained(removeObject, true);
+      
+      toast("Removed");
     },
   });
 
