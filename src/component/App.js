@@ -43,8 +43,9 @@ export default function App({ $target, mainPageId, refreshList }) {
 
     mainPageId = getItem("mainPageId", false);
 
-    console.log(pathname)
     const { pathname } = window.location;
+    console.log(pathname)
+    
     if (pathname === "/KDTRK/") {
     console.log(pathname)
       if (mainPageId != "initialPage") {
