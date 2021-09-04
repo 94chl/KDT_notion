@@ -53,7 +53,7 @@ export default function App({ $target, mainPageId, refreshList }) {
 
     const { pathname } = window.location;
 
-    if (pathname === "/") {
+    if (pathname === "/KDTRK") {
       if (mainPageId != "initialPage") {
         const mainPageInfo = (
           await request(`/documents`, { method: "GET" })
