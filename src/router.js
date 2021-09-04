@@ -5,7 +5,7 @@ export const initRouter = (onRoute) => {
     const { nextUrl, btnType, id, parentId } = e.detail;
 
     if (nextUrl) {
-      history.pushState(null, null, nextUrl);
+      history.pushState(null, null, `/KDTRK${nextUrl}`);
       onRoute(btnType, id, parentId);
     } else {
       console.log("no url!");
