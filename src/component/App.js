@@ -50,8 +50,8 @@ export default function App({ $target, mainPageId, refreshList }) {
     mainPageId = getItem("mainPageId", false);
 
     const { pathname } = window.location;
+    if (pathname === "/KDTRK/") {
     console.log(pathname)
-    if (pathname === "/KDTRK") {
       if (mainPageId != "initialPage") {
         const mainPageInfo = (
           await request(`/documents`, { method: "GET" })
@@ -60,6 +60,7 @@ export default function App({ $target, mainPageId, refreshList }) {
         postsPage.setState(mainPageInfo);
       }
     } else if (pathname.indexOf("/documents/") === 0) {
+    console.log(pathname)
       const [, , postId] = pathname.split("/");
       let getPost = { title: "", content: defaultContent };
       if (btnType !== "new") {
