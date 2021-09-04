@@ -59,6 +59,8 @@ export default function SidePage({ $target, mainPageId, onClick }) {
 
         const postListInfo = pageList.filter((list) => list.id == thisPage)[0];
         onClick(postListInfo);
+        
+        toast("Removed");
       },
     });
 
