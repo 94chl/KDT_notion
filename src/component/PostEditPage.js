@@ -71,7 +71,7 @@ export default function PostEditPage({
     },
     onRemove: async (edited) => {
       const { pathname } = window.location;
-      const [, , postId] = pathname.split("/");
+      const [, , , postId] = pathname.split("/");
       const editedJson = stringifyBody(edited);
 
       await request(`/documents/${postId}`, {
