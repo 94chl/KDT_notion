@@ -19,8 +19,7 @@ export default function App({ $target, mainPageId, refreshList }) {
     $target,
     mainPageId,
   });
-  console.log("post page"+mainPageId)
-
+  
   const postEditPage = new PostEditPage({
     $target,
     initialState: {
@@ -33,7 +32,6 @@ export default function App({ $target, mainPageId, refreshList }) {
       refreshList();
     },
   });
-  console.log("post edit page"+mainPageId)
 
   this.route = async (btnType, id, parentId) => {
     if (btnType === "close") {
