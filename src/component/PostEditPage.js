@@ -116,7 +116,7 @@ export default function PostEditPage({
 
   $page.addEventListener("mousedown", (e) => {
     if (e.target.getAttribute("id") == "postEditPage") {
-      history.pushState(null, null, "/");
+      history.pushState(null, null, "/KDTRK");
       document.querySelector("#postEditPage").remove();
     }
   });
