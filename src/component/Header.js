@@ -59,10 +59,10 @@ export default function Header({ $target, initialState }) {
       document.querySelector("#postEditPage")
         ? document.querySelector("#postEditPage").remove()
         : null;
-      history.pushState(null, null, "/");
+      history.pushState(null, null, "/KDTRK");
     }
 
-    history.pushState(null, null, `/documents/${this.state.id}`);
+    history.pushState(null, null, `/KDTRK/documents/${this.state.id}`);
 
     const $postEditPage = document.createElement("div");
     $postEditPage.setAttribute("id", "postEditPage");
