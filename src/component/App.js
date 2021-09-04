@@ -49,6 +49,7 @@ export default function App({ $target, mainPageId, refreshList }) {
 
     mainPageId = getItem("mainPageId", false);
 
+    console.log(pathname)
     const { pathname } = window.location;
     if (pathname === "/KDTRK/") {
     console.log(pathname)
@@ -59,7 +60,7 @@ export default function App({ $target, mainPageId, refreshList }) {
 
         postsPage.setState(mainPageInfo);
       }
-    } else if (pathname.indexOf("KDTRK/documents/") === 0) {
+    } else if (pathname.indexOf("/KDTRK/documents/") === 0) {
     console.log(pathname)
       const [, , , postId] = pathname.split("/");
       let getPost = { title: "", content: defaultContent };
