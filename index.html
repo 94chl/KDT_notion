@@ -16,6 +16,7 @@
   <div id="toast"></div>
   <script>
     const { pathname } = window.location;
+    console.log(pathname)
     if (pathname.indexOf("/documents/") === 0) history.pushState(null,null,"/KDTRK")
   </script>
   <script src="./src/main.js" type="module"></script>
