@@ -81,8 +81,6 @@ export default function PostEditPage({
     },
   });
   
-  console.log("editor"+mainPageId)
-
   this.setState = async (nextState) => {
     if (this.state.postId !== nextState.postId) {
       this.state = nextState;
