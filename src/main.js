@@ -18,7 +18,7 @@ const sidePage = new SidePage({
     header.setState({ id: postListInfo.id });
   },
 });
-console.log("side"+mainPageId)
+
 const header = new Header({
   $target: document.querySelector("#header"),
   initialState: {
@@ -28,7 +28,7 @@ const header = new Header({
     parent: null,
   },
 });
-console.log("header"+mainPageId)
+
 const app = new App({
   $target: document.querySelector("#app"),
   mainPageId: mainPageId,
@@ -36,4 +36,4 @@ const app = new App({
     sidePage.refreshList();
   },
 });
-console.log("app"+mainPageId)
+
