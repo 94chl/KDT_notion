@@ -126,7 +126,7 @@ export default function Header({ $target, initialState }) {
 
   $header.addEventListener("click", (e) => {
     if (e.target.getAttribute("id") == "postEditPage") {
-      history.pushState(null, null, "/");
+      history.pushState(null, null, "/KDTRK");
       document.querySelector("#postEditPage").remove();
     }
   });
