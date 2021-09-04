@@ -79,7 +79,7 @@ export default function Header({ $target, initialState }) {
         if (timer !== null) clearTimeout(timer);
         timer = setTimeout(async () => {
           const { pathname } = window.location;
-          const [, , postId] = pathname.split("/");
+          const [, , , postId] = pathname.split("/");
           const editedJson = stringifyBody(edited);
           parseRes(edited);
 
@@ -110,7 +110,7 @@ export default function Header({ $target, initialState }) {
       },
       onRemove: async (edited) => {
         const { pathname } = window.location;
-        const [, , postId] = pathname.split("/");
+        const [, , , postId] = pathname.split("/");
         const editedJson = stringifyBody(edited);
 
         await request(`/documents/${postId}`, {
