@@ -44,10 +44,8 @@ export default function App({ $target, mainPageId, refreshList }) {
     mainPageId = getItem("mainPageId", false);
 
     const { pathname } = window.location;
-    console.log(pathname)
     
     if (pathname === "/KDTRK/") {
-    console.log(pathname)
       if (mainPageId != "initialPage") {
         const mainPageInfo = (
           await request(`/documents`, { method: "GET" })
@@ -56,7 +54,6 @@ export default function App({ $target, mainPageId, refreshList }) {
         postsPage.setState(mainPageInfo);
       }
     } else if (pathname.indexOf("/KDTRK/documents/") === 0) {
-    console.log(pathname)
       const [, , , postId] = pathname.split("/");
       let getPost = { title: "", content: defaultContent };
       if (btnType !== "new") {
