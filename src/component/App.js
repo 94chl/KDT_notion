@@ -34,12 +34,6 @@ export default function App({ $target, mainPageId, refreshList }) {
   });
 
   this.route = async (btnType, id, parentId) => {
-    if (btnType === "close") {
-      document.querySelector("#postEditPage")
-        ? document.querySelector("#postEditPage").remove()
-        : null;
-    }
-
     // 에디터가 열린 상태에서, 타 Post 에디터를 랜더링 할때, 기존 에디터 제거
     if (document.querySelector("#postEditPage")) {
       document.querySelector("#postEditPage")
