@@ -55,7 +55,7 @@ export default function Header({ $target, initialState }) {
   let timer = null;
 
   $headerTitle.addEventListener("click", (e) => {
-    history.pushState(null, null, `/KDTRK/documents/${this.state.id}`);
+    history.pushState(null, null, `/KDT_notion/documents/${this.state.id}`);
 
     const $postEditPage = document.createElement("div");
     $postEditPage.setAttribute("id", "postEditPage");
@@ -120,7 +120,7 @@ export default function Header({ $target, initialState }) {
 
   $header.addEventListener("click", (e) => {
     if (e.target.getAttribute("id") == "postEditPage") {
-      history.pushState(null, null, "/KDTRK");
+      history.pushState(null, null, "/KDT_notion");
       document.querySelector("#postEditPage").remove();
     }
   });
