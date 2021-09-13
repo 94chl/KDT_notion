@@ -45,7 +45,7 @@ export default function App({ $target, mainPageId, refreshList }) {
 
     const { pathname } = window.location;
     
-    if (pathname === "/KDTRK/") {
+    if (pathname === "/KDT_notion/") {
       if (mainPageId != "initialPage") {
         const mainPageInfo = (
           await request(`/documents`, { method: "GET" })
@@ -53,7 +53,7 @@ export default function App({ $target, mainPageId, refreshList }) {
 
         postsPage.setState(mainPageInfo);
       }
-    } else if (pathname.indexOf("/KDTRK/documents/") === 0) {
+    } else if (pathname.indexOf("/KDT_notion/documents/") === 0) {
       const [, , , postId] = pathname.split("/");
       let getPost = { title: "", content: defaultContent };
       if (btnType !== "new") {
