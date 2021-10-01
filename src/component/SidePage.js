@@ -45,6 +45,7 @@ export default function SidePage({ $target, mainPageId, onClick }) {
         const clickedComponent = (await request("/documents")).filter(
           (list) => list.id == clicked
         )[0];
+        console.log(clicked);
 
         let thisPage = getItem("mainPageId");
 
@@ -59,8 +60,6 @@ export default function SidePage({ $target, mainPageId, onClick }) {
 
         const postListInfo = pageList.filter((list) => list.id == thisPage)[0];
         onClick(postListInfo);
-        
-        toast("Removed");
       },
     });
 

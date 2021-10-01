@@ -5,7 +5,7 @@ export const initRouter = (onRoute) => {
     const { nextUrl, btnType, id, parentId } = e.detail;
 
     if (nextUrl) {
-      history.pushState(null, null, `/KDT_notion{nextUrl}`);
+      history.pushState(null, null, nextUrl);
       onRoute(btnType, id, parentId);
     } else {
       console.log("no url!");

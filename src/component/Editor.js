@@ -70,6 +70,7 @@ export default function Editor({ $target, initialState, onEditing, onRemove }) {
             $attributeBox.querySelector("[data-id=addButton]")
           );
         this.state.content.set("new", "");
+        console.log(this.state);
       });
 
     // 포스트 속성 삭제
@@ -81,6 +82,7 @@ export default function Editor({ $target, initialState, onEditing, onRemove }) {
           this.state.content.delete(targetList.dataset.id);
           targetList.remove();
           onRemove(this.state);
+          console.log(this.state);
         });
       });
   };

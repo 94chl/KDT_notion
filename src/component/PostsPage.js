@@ -16,13 +16,12 @@ export default function PostsPage({ $target, mainPageId }) {
       });
 
       removeChained(removeObject, true);
-      
-      toast("Removed");
     },
   });
 
   this.setState = async (postListInfo) => {
     const posts = postListInfo;
+    console.log(posts);
     postList.setState(posts.documents, posts.id);
     this.render();
   };
